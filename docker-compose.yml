@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  cloudreve-pay-afd:
+    image: 404net/cloudreve-afdpay:latest
+    container_name: cloudreve-afdpay
+    network_mode: host
+    command: [ "python","-u", "cloudreve_pay.py" ]
+    environment:
+      - SITE_URL=https://example.com 网盘的域名,最后没有/
+      - USER_ID=爱发电的userid
+      - TOKEN=爱发电的token
+      - PORT=5000
